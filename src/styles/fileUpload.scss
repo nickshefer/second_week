@@ -1,0 +1,53 @@
+.upload {
+	max-width: 675px;
+	margin: 50px auto 0px auto;
+
+	&_label {
+		position: relative;
+		cursor: pointer;
+		display: block;
+		padding: 15px 20px;
+		border: 1px solid $colors---white;
+		background: $colors---white;
+		box-shadow: 0 4px 16px 0 rgba(51, 51, 51, 0.08),
+			0 4px 4px 0 rgba(51, 51, 51, 0.04);
+
+		&:hover,
+		&:active {
+			border: 1px solid #fafafa;
+			background: #fafafa;
+		}
+		&.drag-active {
+			border: 1px solid $colors-primary;
+			background: #fafafa;
+		}
+	}
+
+	&_title {
+		font-weight: 400;
+		font-size: 16px;
+		color: $colors---black;
+		margin-bottom: 15px;
+	}
+
+	&_text {
+		font-weight: 400;
+		font-size: 13px;
+		color: $colors---gray;
+	}
+
+	&_input {
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		// visibility: hidden;
+		opacity: 0;
+		// &:hover,
+		// &:active {
+		// 	background: #f3f3f3;
+		// }
+	}
+}

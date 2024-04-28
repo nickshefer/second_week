@@ -1,0 +1,35 @@
+{
+    "form_name": "Создать класс",
+    "form_description": "Выберите все параметры нового класса разметки",
+    "form_fields": [
+        {
+            "type": "text",
+            "label": "Название",
+            "required": true,
+            "placeholder": "Введите название",
+            "maxlength": 30
+        },
+        {
+            "type": "color",
+            "label": "Цвет класса",
+            "required": true
+        },
+        {
+            "type": "select",
+            "label": "Тип класса",
+            "required": true,
+            "multiple": false,
+            "options": ["Размер, Форма, Назначение"]
+        }
+    ],
+    "form_buttons": [
+        {
+            "name": "Отмена",
+            "type": "button"
+        },
+        {
+            "name": "Создать",
+            "type": "submit"
+        }
+    ]
+}
