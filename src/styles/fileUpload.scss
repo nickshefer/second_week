@@ -1,39 +1,78 @@
+.json_upload {
+	margin: 40px auto 0 !important;
+}
 .upload {
-	max-width: 675px;
-	margin: 50px auto 0px auto;
-
-	&_label {
-		position: relative;
-		cursor: pointer;
-		display: block;
-		padding: 15px 20px;
-		border: 1px solid $colors---white;
-		background: $colors---white;
-		box-shadow: 0 4px 16px 0 rgba(51, 51, 51, 0.08),
+	max-width: 800px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80px;
+	position: relative;
+	border-radius: 4px;
+	padding: 20px;
+	box-shadow: 0 4px 16px 0 rgba(51, 51, 51, 0.08),
+		0 4px 4px 0 rgba(51, 51, 51, 0.04);
+	background: $colors---white;
+	&:hover,
+	&:active {
+		box-shadow: 0 4px 24px 0 rgba(51, 51, 51, 0.24),
 			0 4px 4px 0 rgba(51, 51, 51, 0.04);
-
-		&:hover,
-		&:active {
-			border: 1px solid #fafafa;
-			background: #fafafa;
-		}
-		&.drag-active {
-			border: 1px solid $colors-primary;
-			background: #fafafa;
-		}
+	}
+	&:before {
+		content: '';
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 4px;
+		background: url('/src/assets/fileIcon.svg') center no-repeat;
+		background-color: $colors-primary;
+	}
+	&_drag::before {
+		display: block;
 	}
 
 	&_title {
-		font-weight: 400;
-		font-size: 16px;
-		color: $colors---black;
-		margin-bottom: 15px;
-	}
-
-	&_text {
+		position: absolute;
+		top: 10px;
+		left: 20px;
+		text-align: center;
 		font-weight: 400;
 		font-size: 13px;
 		color: $colors---gray;
+		// margin-bottom: 15px;
+	}
+
+	&_size {
+		display: inline-block;
+		margin-left: 5px;
+		color: $colors---gray;
+	}
+
+	&_delete {
+		cursor: pointer;
+		position: relative;
+		z-index: 2;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		font-weight: 400;
+		font-size: 13px;
+		color: $colors-primary;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&_text {
+		text-align: center;
+		font-weight: 500;
+		font-size: 16px;
+		color: $colors---black;
 	}
 
 	&_input {
@@ -43,11 +82,58 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		// visibility: hidden;
 		opacity: 0;
-		// &:hover,
-		// &:active {
-		// 	background: #f3f3f3;
-		// }
+		&[aria-invalid] {
+		}
+	}
+	&_error {
+		color: $colors---red;
+	}
+	&_decor {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 20px;
+		width: 56px;
+		height: 56px;
+		border-radius: 50%;
+		background: url('/src/assets/fileIconPrimary.svg') center no-repeat;
+		background-color: $colors---grayl;
+	}
+}
+.upload-item {
+	display: flex;
+
+	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 0 !important;
+	position: relative;
+	border-radius: 4px;
+	padding: 10px 20px;
+	box-shadow: 0 4px 16px 0 rgba(51, 51, 51, 0.08),
+		0 4px 4px 0 rgba(51, 51, 51, 0.04);
+	background: $colors---white;
+	font-weight: 400;
+	font-size: 16px;
+
+	&_name {
+		color: $colors---black;
+	}
+	&_size {
+		display: inline-block;
+		margin-left: 8px;
+		color: $colors---gray;
+	}
+	&_delete {
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 10px;
+		color: $colors---gray;
+		&:hover {
+			color: $colors---red;
+		}
 	}
 }

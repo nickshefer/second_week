@@ -1,38 +1,20 @@
 import { makeAutoObservable } from 'mobx';
+import { FormObj } from '../types/formTypes';
 
-export interface IField {
-	type: string;
-	label: string;
-	required?: boolean;
-	placeholder?: string;
-}
-
-export interface IButton {
-	name: string;
-	type: string;
-}
-
-export interface IDataForm {
-	form_name: string;
-	form_fields: IField[];
-	form_buttons: IButton[];
-}
-
-class DataForm {
-	public form: IDataForm | null = null;
-
+export default class FormsStore {
 	constructor() {
-		this.form = null;
 		makeAutoObservable(this);
 	}
 
-	addForm = (form: IDataForm) => {
-		this.form = form;
+	public forms: FormObj[] = [];
+
+	addForm = (form: FormObj) => {
+		this.forms.push(form);
 	};
-	resetForm = () => {
-		this.form = null;
+	removeForm = (id: number) => {
+		this.forms = this.forms.filter(form => form.id != id);
+	};
+	resetForms = () => {
+		this.forms = [];
 	};
 }
-
-const dataForm = new DataForm();
-export default dataForm;

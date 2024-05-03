@@ -1,0 +1,105 @@
+// .color {
+// 	position: relative;
+// 	cursor: pointer;
+// 	border-radius: 4px;
+// 	padding: 5px 48px 5px 5px;
+// 	width: 95px;
+// 	height: 55px;
+// 	box-shadow: 0 4px 16px 0 rgba(51, 51, 51, 0.08),
+// 		0 4px 4px 0 rgba(51, 51, 51, 0.04);
+// 	background: $colors---white;
+// 	border: none;
+// 	&:after {
+// 		content: '';
+// 		display: block;
+// 		width: 100%;
+// 		height: 100%;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		background: url('/src/assets/arrow.svg') 80% center no-repeat;
+// 	}
+// 	&:hover {
+// 		box-shadow: 0 4px 24px 0 rgba(51, 51, 51, 0.24),
+// 			0 4px 4px 0 rgba(51, 51, 51, 0.04);
+// 	}
+// 	&_wrapper {
+// 		display: flex;
+// 		align-items: center;
+// 	}
+// 	&_label {
+// 		cursor: pointer;
+// 		margin-left: 20px;
+// 		font-weight: 400;
+// 		font-size: 16px;
+// 		color: $colors---gray;
+// 	}
+// }
+
+.color {
+	cursor: pointer;
+	border-radius: 4px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 95px;
+	height: 55px;
+	box-shadow: 0 4px 16px 0 rgba(51, 51, 51, 0.08),
+		0 4px 4px 0 rgba(51, 51, 51, 0.04);
+	background: $colors---white;
+	&[aria-invalid] {
+		background: $colors---red-girl;
+	}
+	&:hover {
+		box-shadow: 0 4px 24px 0 rgba(51, 51, 51, 0.24),
+			0 4px 4px 0 rgba(51, 51, 51, 0.04);
+	}
+	&_wrapper {
+		display: inline-flex;
+		position: relative;
+		border-radius: 4px;
+		align-items: center;
+	}
+	&_current {
+		margin-left: 9px;
+		width: 40px;
+		height: 40px;
+		background: #000;
+	}
+	&_arrow {
+		margin-right: 15px;
+		width: 15px;
+		height: 10px;
+		background: url('/src/assets/arrow.svg') center 90% no-repeat;
+		&.color_active {
+			transform: rotate(180deg);
+		}
+	}
+	&_label {
+		cursor: pointer;
+		margin-left: 20px;
+		font-weight: 400;
+		font-size: 16px;
+		color: $colors---gray;
+	}
+	&_options {
+		position: absolute;
+		z-index: 10;
+		top: 60px;
+		display: none;
+		padding: 9px;
+		gap: 9px;
+		box-shadow: 0 14px 24px 0 rgba(51, 51, 51, 0.12),
+			0 4px 4px 0 rgba(51, 51, 51, 0.04);
+		background: $colors---white;
+		&.color-active {
+			display: flex;
+		}
+	}
+	&_item {
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+		background: #000;
+	}
+}
