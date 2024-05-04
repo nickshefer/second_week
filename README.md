@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Динамический парсер форм
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Динамический парсер форм представляет собой веб-приложение, целью которого является загрузка и отображение форм, описанных в формате JSON. Пользователь имеет возможность загрузить JSON файл с описанием формы, после чего происходит парсинг этого файла и динамическое создание соответствующей формы на странице.
 
-Currently, two official plugins are available:
+## Приступая к работе
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Версия node.js - v20.11.0
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+npm install
+# затем
+npm run dev
+# или
+yarn dev
+# или
+pnpm dev
+# или
+bun dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Макет в Figma
+
+https://www.figma.com/file/7S2O5KurM4GkBO1nj30Zg4/Forms-(2-week)?type=design&node-id=2286%3A7698&mode=design&t=ATrrUxSxxTtIpupx-1
+
+## Примечания
+
+Не реализовано:
+
+- Валидация передаваемого в форму json-файла.
+- Компонент select в соответсвии с макетом.
+- Отображение текста ошибки при валидации полей.
+- Стили для состояния disabled для UI-компонентов.
+- Маска для полей со свойством mask.
+- Корректная работа компонента FileUpload.
+- Ошибки в типах
